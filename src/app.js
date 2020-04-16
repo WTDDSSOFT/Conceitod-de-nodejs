@@ -51,7 +51,7 @@ app.delete("/repositories/:id", (request, response) => {
   const { id } = request.params;
 
   if (!isUuid(id)) {
-    return response.staus(400).json({ error: "Repository ID not found" });
+    return response.status(400).json({ error: "Repository ID not found" });
   }
   const repositoryIndex = repositories.findIndex(
     (repository) => repository.id === id
@@ -71,7 +71,7 @@ app.post("/repositories/:id/like", (request, response) => {
   const { id } = request.params;
 
   if (!isUuid(id)) {
-    return response.staus(400).json({ error: "Repository ID not found" });
+    return response.status(400).json({ error: "Repository ID not found" });
   }
 
   const repositorieLike = repositories.find(
